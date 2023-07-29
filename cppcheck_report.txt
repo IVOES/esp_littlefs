@@ -1,0 +1,152 @@
+src/esp_littlefs.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 19 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/esp_littlefs.c:477:22: style: The scope of the variable 'p' can be reduced. [variableScope]
+    esp_littlefs_t * p;
+                     ^
+src/esp_littlefs.c:648:23: style: Local variable 'err' shadows outer variable [shadowVariable]
+            esp_err_t err;
+                      ^
+src/esp_littlefs.c:544:15: note: Shadowed declaration
+    esp_err_t err = ESP_FAIL;
+              ^
+src/esp_littlefs.c:648:23: note: Shadow variable
+            esp_err_t err;
+                      ^
+src/esp_littlefs.c:81:10: style: struct member 'vfs_littlefs_dir_t::offset' is never used. [unusedStructMember]
+    long offset;        /*!< Offset of the current dirent */
+         ^
+src/lfs_config.h:172:27: error: The address of local variable 'a' is accessed at non-zero index. [objectIndex]
+           (((uint8_t*)&a)[1] <<  8) |
+                          ^
+src/lfs_config.h:172:24: note: Address of variable taken here.
+           (((uint8_t*)&a)[1] <<  8) |
+                       ^
+src/lfs_config.h:172:27: note: The address of local variable 'a' is accessed at non-zero index.
+           (((uint8_t*)&a)[1] <<  8) |
+                          ^
+src/lfs_config.h:173:27: error: The address of local variable 'a' is accessed at non-zero index. [objectIndex]
+           (((uint8_t*)&a)[2] << 16) |
+                          ^
+src/lfs_config.h:173:24: note: Address of variable taken here.
+           (((uint8_t*)&a)[2] << 16) |
+                       ^
+src/lfs_config.h:173:27: note: The address of local variable 'a' is accessed at non-zero index.
+           (((uint8_t*)&a)[2] << 16) |
+                          ^
+src/lfs_config.h:174:27: error: The address of local variable 'a' is accessed at non-zero index. [objectIndex]
+           (((uint8_t*)&a)[3] << 24);
+                          ^
+src/lfs_config.h:174:24: note: Address of variable taken here.
+           (((uint8_t*)&a)[3] << 24);
+                       ^
+src/lfs_config.h:174:27: note: The address of local variable 'a' is accessed at non-zero index.
+           (((uint8_t*)&a)[3] << 24);
+                          ^
+src/lfs_config.h:196:27: error: The address of local variable 'a' is accessed at non-zero index. [objectIndex]
+           (((uint8_t*)&a)[1] << 16) |
+                          ^
+src/lfs_config.h:196:24: note: Address of variable taken here.
+           (((uint8_t*)&a)[1] << 16) |
+                       ^
+src/lfs_config.h:196:27: note: The address of local variable 'a' is accessed at non-zero index.
+           (((uint8_t*)&a)[1] << 16) |
+                          ^
+src/lfs_config.h:197:27: error: The address of local variable 'a' is accessed at non-zero index. [objectIndex]
+           (((uint8_t*)&a)[2] <<  8) |
+                          ^
+src/lfs_config.h:197:24: note: Address of variable taken here.
+           (((uint8_t*)&a)[2] <<  8) |
+                       ^
+src/lfs_config.h:197:27: note: The address of local variable 'a' is accessed at non-zero index.
+           (((uint8_t*)&a)[2] <<  8) |
+                          ^
+src/lfs_config.h:198:27: error: The address of local variable 'a' is accessed at non-zero index. [objectIndex]
+           (((uint8_t*)&a)[3] <<  0);
+                          ^
+src/lfs_config.h:198:24: note: Address of variable taken here.
+           (((uint8_t*)&a)[3] <<  0);
+                       ^
+src/lfs_config.h:198:27: note: The address of local variable 'a' is accessed at non-zero index.
+           (((uint8_t*)&a)[3] <<  0);
+                          ^
+src/lfs_config.h:137:24: style: Opposite expression on both sides of '&'. [oppositeExpression]
+    return lfs_npw2((a & -a) + 1) - 1;
+                       ^
+test/test_benchmark.c:177:9: warning: %lld in format string (no. 2) requires 'long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_sint]
+        printf("%d bytes written in %lld us\n", fsize, (t_end - t_start));
+        ^
+test/test_benchmark.c:199:9: warning: %lld in format string (no. 2) requires 'long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_sint]
+        printf("%d bytes read in %lld us\n", fsize, (t_end - t_start));
+        ^
+test/test_benchmark.c:219:9: warning: %lld in format string (no. 2) requires 'long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_sint]
+        printf("deleted file %d in %lld us\n", i, (t_end - t_start));
+        ^
+test/test_benchmark.c:226:5: warning: %lld in format string (no. 2) requires 'long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_sint]
+    printf("Total (%d) Write: %lld us\n", n_write, t_write);
+    ^
+test/test_benchmark.c:227:5: warning: %lld in format string (no. 2) requires 'long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_sint]
+    printf("Total (%d) Read: %lld us\n", n_read, t_read);
+    ^
+test/test_benchmark.c:228:5: warning: %lld in format string (no. 2) requires 'long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_sint]
+    printf("Total (%d) Delete: %lld us\n", n_delete, t_delete);
+    ^
+test/test_benchmark.c:241:5: warning: %lld in format string (no. 1) requires 'long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_sint]
+    printf("SPIFFS Formatted in %lld us\n", t_spiffs);
+    ^
+test/test_benchmark.c:247:5: warning: %lld in format string (no. 1) requires 'long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_sint]
+    printf("FAT Formatted in %lld us\n", t_fat);
+    ^
+test/test_benchmark.c:252:5: warning: %lld in format string (no. 1) requires 'long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_sint]
+    printf("LittleFS Formatted in %lld us\n", t_littlefs);
+    ^
+test/test_littlefs.c:58:5: portability: %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+    printf("total: %d, used: %d\n", total, used);
+    ^
+test/test_littlefs.c:58:5: portability: %d in format string (no. 2) requires 'int' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+    printf("total: %d, used: %d\n", total, used);
+    ^
+test/test_littlefs.c:582:5: portability: %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+    printf("old: %d; new: %d; diff: %d\n", used_og, used_new, used_new-used_og);
+    ^
+test/test_littlefs.c:582:5: portability: %d in format string (no. 2) requires 'int' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+    printf("old: %d; new: %d; diff: %d\n", used_og, used_new, used_new-used_og);
+    ^
+test/test_littlefs.c:582:5: portability: %d in format string (no. 3) requires 'int' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+    printf("old: %d; new: %d; diff: %d\n", used_og, used_new, used_new-used_og);
+    ^
+test/test_littlefs.c:861:9: portability: %d in format string (no. 2) requires 'int' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+        snprintf(name, sizeof(name), "%s_%d.txt", filename_prefix, i);
+        ^
+test/test_littlefs.c:960:9: portability: %d in format string (no. 2) requires 'int' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+        snprintf(names[i], sizeof(names[i]), "%s%d", filename_prefix, i + 1);
+        ^
+test/test_littlefs.c:1121:9: portability: %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+        snprintf(names[i], sizeof(names[i]), littlefs_base_path "/%d", i + 1);
+        ^
+test/test_littlefs.c:173:10: style: The scope of the variable 'buf' can be reduced. [variableScope]
+    char buf[100] = { 0 };
+         ^
+test/test_littlefs.c:1128:17: style: Local variable 'i' shadows outer variable [shadowVariable]
+        for(int i=0; i < n_bytes; i++) {
+                ^
+test/test_littlefs.c:1120:17: note: Shadowed declaration
+    for (size_t i = 0; i < 7; ++i) {
+                ^
+test/test_littlefs.c:1128:17: note: Shadow variable
+        for(int i=0; i < n_bytes; i++) {
+                ^
+example/main/demo_esp_littlefs.c:32:0: style: The function 'app_main' is never used. [unusedFunction]
+
+^
+src/esp_littlefs.c:199:0: style: The function 'esp_littlefs_mounted' is never used. [unusedFunction]
+
+^
+src/lfs_config.c:12:0: style: The function 'lfs_crc' is never used. [unusedFunction]
+
+^
+src/esp_littlefs.c:1874:0: style: The function 'rmdirs' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
